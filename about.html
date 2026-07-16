@@ -4,53 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>À propos - TechInnov Gabon</title>
+    <!-- Liaison avec ta feuille de style CSS globale -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
-        <div>TechInnov</div>
+        <div class="logo">TechInnov</div>
         <nav aria-label="Menu principal">
             <ul>
                 <li><a href="index.html">Accueil</a></li>
-                <li><a href="about.html" aria-current="page">À propos</a></li>
+                <li><a href="about.html" class="active" aria-current="page">À propos</a></li>
                 <li><a href="services.html">Nos services</a></li>
+                <li><a href="actualites.html">Actualités</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section>
+        <section class="about-intro">
             <h1>À propos de TechInnov</h1>
             <p>Fondée à Libreville, notre agence accompagne les entreprises locales et régionales dans leur transition digitale en combinant expertise technique et créativité.</p>
         </section>
 
         <section id="team">
             <h2>Notre équipe d'experts</h2>
-            <ul style="list-style: none; display: flex; gap: 20px; padding: 0; flex-wrap: wrap;">
+            <ul class="team-list">
                 <li>
-                    <figure style="margin: 0; text-align: center;">
-                        <img src="directeur.jpeg" alt="Portrait de Marc Alogo, Directeur Général" style="border-radius: 50%; object-fit: cover; width: 150px; height: 150px;" width="150" height="150">
-                        <figcaption style="margin-top: 10px;">
+                    <figure class="team-member">
+                        <!-- Ton image locale pour le Directeur -->
+                        <img src="directeur.jpeg" alt="Portrait de Marc Alogo, Directeur Général" width="150" height="150">
+                        <figcaption>
                             <strong>MANGUEDI GUINDAMBA Orlin Jeremie</strong><br>
                             <em>Directeur Général / CEO</em>
                         </figcaption>
                     </figure>
                 </li>
                 <li>
-                    <figure style="margin: 0; text-align: center;">
-                        <img src="alima.jpeg" alt="Portrait de Sarah Nzang, Directrice Technique" style="border-radius: 50%; object-fit: cover; width: 150px; height: 150px;" width="150" height="150">
-                        <figcaption style="margin-top: 10px;">
-                            <strong>MANGADI BABAGALA Alima</strong><br>
-                            <em>Directrice Technique / CTO</em>
+                    <figure class="team-member">
+                        <!-- Ton image locale pour la Directrice Technique -->
+                        <img src="photo2.jpeg" alt="Portrait de Sarah Nzang, Directrice Technique" width="150" height="150">
+                        <figcaption>
+                            <strong>MATCHIMA Vergest</strong><br>
+                            <em>Directeur Technique / CTO</em>
                         </figcaption>
                     </figure>
                 </li>
                 <li>
-                    <figure style="margin: 0; text-align: center;">
-                        <img src="vergest.jpeg" alt="Portrait d'Arnaud Obiang, Lead Designer" style="border-radius: 50%; object-fit: cover; width: 150px; height: 150px;" width="150" height="150">
-                        <figcaption style="margin-top: 10px;">
-                            <strong>MATCHIMA Vergest</strong><br>
+                    <figure class="team-member">
+                        <!-- Ton image locale pour le Lead Designer -->
+                        <img src="photo3.jpeg" alt="Portrait d'Arnaud Obiang, Lead Designer" width="150" height="150">
+                        <figcaption>
+                            <strong>MANGADI BABAGALA Alima</strong><br>
                             <em>Lead Designer</em>
                         </figcaption>
                     </figure>

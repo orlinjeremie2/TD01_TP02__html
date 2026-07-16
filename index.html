@@ -4,27 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accueil - TechInnov Gabon</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
-        <div>TechInnov</div>
+        <div class="logo">TechInnov</div>
         <nav aria-label="Menu principal">
             <ul>
-                <li><a href="index.html" aria-current="page">Accueil</a></li>
+                <li><a href="index.html" class="active" aria-current="page">Accueil</a></li>
                 <li><a href="about.html">À propos</a></li>
                 <li><a href="services.html">Nos services</a></li>
+                <li><a href="actualite.html">Actualités</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="actualités.html">Actualités</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section style="background: #f4f4f4; padding: 4rem 2rem; text-align: center;">
-            <h1>Bâtissons ensemble l'avenir numérique du Gabon</h1>
-            <p>Solutions logicielles innovantes et accompagnement sur-mesure pour la transformation de votre entreprise.</p>
-            <p><a href="services.html" style="background: #007bff; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">Découvrir nos services</a></p>
+        <section class="hero">
+            <h1>Propulsez votre transformation numérique avec TechInnov</h1>
+            <p>Nous accompagnons les entreprises locales et régionales dans la création de solutions digitales performantes et sur-mesure.</p>
+            <div class="cta-buttons">
+                <a href="services.html" class="btn-primary">Découvrir nos services</a>
+                <a href="contact.html" class="btn-secondary">Nous contacter</a>
+            </div>
+        </section>
+
+        <section class="features">
+            <h2>Pourquoi choisir TechInnov Gabon ?</h2>
+            <div class="grid-container">
+                <article class="card">
+                    <h3>Expertise locale</h3>
+                    <p>Une équipe basée à Libreville qui comprend parfaitement les enjeux et les opportunités du marché africain.</p>
+                </article>
+                <article class="card">
+                    <h3>Technologies modernes</h3>
+                    <p>Nous utilisons les meilleurs outils actuels pour concevoir des sites rapides, sécurisés et évolutifs.</p>
+                </article>
+                <article class="card">
+                    <h3>Accompagnement de A à Z</h3>
+                    <p>Du conseil initial jusqu'au suivi technique de votre plateforme, nous sommes à vos côtés.</p>
+                </article>
+            </div>
         </section>
     </main>
 

@@ -1,19 +1,21 @@
 /* ==========================================================================
-   1. VARIABLES & CONFIGURATION GÉNÉRALE
+   1. VARIABLES DE COULEURS ET POLICES (Design moderne et accessible)
    ========================================================================== */
 :root {
-    --primary-color: #007bff;
-    --primary-hover: #0056b3;
-    --dark-color: #1a1a1a;
-    --light-bg: #f8f9fa;
-    --border-color: #e2e8f0;
-    --text-color: #333333;
-    --text-muted: #666666;
-    --white: #ffffff;
-    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    --transition: all 0.3s ease;
+    --primary-color: #0066cc;     /* Bleu royal - Professionnel et technologique */
+    --primary-hover: #0052a3;     /* Bleu foncé pour l'effet de survol (hover) */
+    --secondary-color: #10b981;   /* Vert émeraude pour les accents ou validations */
+    --dark-color: #1e293b;        /* Gris très foncé pour le texte principal (meilleur que le noir pur) */
+    --light-bg: #f8fafc;          /* Fond de page gris ultra-clair, doux pour les yeux */
+    --card-bg: #ffffff;          /* Fond des cartes et blocs en blanc pur */
+    --border-color: #e2e8f0;      /* Gris très léger pour les bordures */
+    --text-muted: #64748b;        /* Gris moyen pour les dates et textes secondaires */
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* ==========================================================================
+   2. REGLAGES GENERAUX (RESET)
+   ========================================================================== */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -21,149 +23,222 @@
 }
 
 body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-family: var(--font-family);
+    background-color: var(--light-bg);
+    color: var(--dark-color);
     line-height: 1.6;
-    color: var(--text-color);
-    background-color: var(--white);
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
 }
 
 main {
-    flex: 1;
-    padding: 3rem 1.5rem;
-    max-width: 1100px;
-    margin: 0 auto;
-    width: 100%;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    min-height: 70vh; /* Permet de pousser le footer vers le bas */
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--primary-hover);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 /* ==========================================================================
-   2. HEADER & NAVIGATION
+   3. EN-TÊTE ET NAVIGATION (HEADER & NAV)
    ========================================================================== */
 header {
-    background-color: var(--white);
+    background-color: var(--card-bg);
     border-bottom: 1px solid var(--border-color);
-    padding: 1rem 1.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
+    padding: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 header .logo {
     font-size: 1.5rem;
     font-weight: 800;
     color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 15px;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
 }
 
-nav ul {
+header nav ul {
     list-style: none;
     display: flex;
-    gap: 1.5rem;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
-nav a {
-    text-decoration: none;
-    color: var(--text-muted);
-    font-weight: 500;
-    font-size: 1rem;
-    transition: var(--transition);
+header nav a {
+    font-weight: 600;
+    color: var(--dark-color);
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
 }
 
-nav a:hover, 
-nav a[aria-current="page"] {
-    color: var(--primary-color);
+header nav a:hover,
+header nav a.active {
+    background-color: var(--primary-color);
+    color: #ffffff;
 }
 
 /* ==========================================================================
-   3. HERO SECTION (Page Accueil)
+   4. STRUCTURES ET GRILLES COMMUNES (SERVICES & ACCUEIL)
+   ========================================================================== */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+/* ==========================================================================
+   5. PAGE D'ACCUEIL (HERO SECTION)
    ========================================================================== */
 .hero {
-    background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
-    padding: 5rem 2rem;
     text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #ffffff 0%, #eef2f7 100%);
     border-radius: 12px;
-    box-shadow: var(--shadow);
+    margin-bottom: 50px;
+    border: 1px solid var(--border-color);
 }
 
 .hero h1 {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
+    margin-bottom: 20px;
     color: var(--dark-color);
-    margin-bottom: 1rem;
-    line-height: 1.2;
+    font-weight: 800;
 }
 
 .hero p {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     color: var(--text-muted);
-    margin-bottom: 2rem;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 800px;
+    margin: 0 auto 35px auto;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* Boutons réutilisables */
+.btn-primary, .btn-secondary {
+    display: inline-block;
+    padding: 14px 28px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
 }
 
 .btn-primary {
     background-color: var(--primary-color);
-    color: var(--white);
-    padding: 0.75rem 1.5rem;
-    text-decoration: none;
-    border-radius: 6px;
-    font-weight: 600;
-    transition: var(--transition);
-    display: inline-block;
-    box-shadow: 0 4px 6px rgba(0, 123, 255, 0.25);
+    color: #ffffff;
 }
 
 .btn-primary:hover {
     background-color: var(--primary-hover);
-    transform: translateY(-2px);
+    color: #ffffff;
+}
+
+.btn-secondary {
+    background-color: var(--border-color);
+    color: var(--dark-color);
+}
+
+.btn-secondary:hover {
+    background-color: #cbd5e1;
 }
 
 /* ==========================================================================
-   4. SECTION ÉQUIPE (Page À propos)
+   6. PAGE À PROPOS & EQUIPE
    ========================================================================== */
-#team {
-    margin-top: 3rem;
+.about-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+}
+
+.about-intro h1 {
+    margin-bottom: 20px;
 }
 
 #team h2 {
-    margin-bottom: 2rem;
     text-align: center;
+    margin-bottom: 30px;
 }
 
 .team-list {
     list-style: none;
     display: flex;
-    gap: 2.5rem;
     justify-content: center;
-    flex-wrap: wrap;
+    gap: 30px;
     padding: 0;
+    flex-wrap: wrap;
 }
 
 .team-member {
-    background: var(--white);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 2rem;
+    margin: 0;
     text-align: center;
+    background: var(--card-bg);
+    padding: 30px 25px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
     width: 250px;
-    box-shadow: var(--shadow);
 }
 
 .team-member img {
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid var(--primary-color);
-    margin-bottom: 1rem;
-    transition: var(--transition);
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 15px auto;
+    border: 4px solid var(--border-color);
+    transition: border-color 0.3s ease;
 }
 
-.team-member img:hover {
-    transform: scale(1.05);
+.team-member:hover img {
+    border-color: var(--primary-color);
 }
 
 .team-member figcaption strong {
@@ -174,128 +249,222 @@ nav a[aria-current="page"] {
 .team-member figcaption em {
     color: var(--text-muted);
     font-style: normal;
-    display: block;
-    margin-top: 0.25rem;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
 }
 
 /* ==========================================================================
-   5. GRILLE DE SERVICES (Page Services)
+   7. PAGE ACTUALITÉS (LAYOUT BILATÉRAL)
    ========================================================================== */
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
+.news-container {
+    display: flex;
+    gap: 40px;
 }
 
-.card {
-    background-color: var(--white);
+#news-feed {
+    flex: 2;
+}
+
+#news-feed h1 {
+    margin-bottom: 30px;
+}
+
+.news-card {
+    background: var(--card-bg);
+    padding: 30px;
+    margin-bottom: 35px;
+    border-radius: 10px;
     border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 2rem;
-    box-shadow: var(--shadow);
-    transition: var(--transition);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
 
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-    border-color: var(--primary-color);
-}
-
-.card h3 {
+.news-card h2 {
+    font-size: 1.75rem;
     color: var(--dark-color);
-    margin-bottom: 0.75rem;
-    font-size: 1.35rem;
+    margin-bottom: 8px;
 }
 
-.card p {
+.news-date {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.news-card img {
+    border-radius: 8px;
+    margin-bottom: 20px;
+    width: 100%;
+    max-height: 350px;
+    object-fit: cover;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+/* Barre latérale d'actualités */
+.news-sidebar {
+    flex: 1;
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    height: fit-content;
+}
+
+.news-sidebar h3 {
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+/* ==========================================================================
+   8. FORMULAIRES (CONTACT & NEWSLETTER)
+   ========================================================================== */
+.contact-section {
+    max-width: 650px;
+    margin: 0 auto;
+    background-color: var(--card-bg);
+    padding: 40px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+}
+
+.contact-section h1 {
+    margin-bottom: 10px;
+}
+
+.contact-section p {
+    color: var(--text-muted);
+    margin-bottom: 30px;
+}
+
+.contact-form p,
+.newsletter-form p {
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label,
+.newsletter-form label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form select,
+.contact-form textarea,
+.newsletter-form input[type="email"] {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1.5px solid var(--border-color);
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus,
+.newsletter-form input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(0, 102, 204, 0.1);
+}
+
+/* Case à cocher */
+.contact-form .checkbox-group,
+.newsletter-form .checkbox-container {
+    flex-direction: row !important;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-form .checkbox-group input,
+.newsletter-form .checkbox-container input {
+    width: auto;
+    transform: scale(1.1);
+}
+
+.contact-form .checkbox-group label,
+.newsletter-form .checkbox-container label {
+    margin-bottom: 0;
+    font-weight: normal;
+    color: var(--text-muted);
+}
+
+/* Section d'abonnement newsletter (Footer) */
+.newsletter-section {
+    background-color: #f1f5f9;
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    border: 1px solid var(--border-color);
+}
+
+.newsletter-section h3 {
+    margin-bottom: 15px;
+    color: var(--dark-color);
+}
+
+/* ==========================================================================
+   9. PIED DE PAGE (FOOTER)
+   ========================================================================== */
+footer {
+    border-top: 1px solid var(--border-color);
+    background-color: var(--card-bg);
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 60px;
+}
+
+footer p {
+    font-size: 0.9rem;
     color: var(--text-muted);
 }
 
 /* ==========================================================================
-   6. FORMULAIRE DE CONTACT
+   10. MEDIA QUERIES (ADAPTATION MOBILE & TABLETTE)
    ========================================================================== */
-form {
-    background-color: var(--light-bg);
-    padding: 2rem;
-    border-radius: 12px;
-    border: 1px solid var(--border-color);
-    max-width: 600px;
-    margin: 2rem auto 0 auto;
-    box-shadow: var(--shadow);
+@media (max-width: 900px) {
+    .news-container {
+        flex-direction: column;
+    }
+    
+    .news-sidebar {
+        width: 100%;
+    }
 }
 
-form p {
-    margin-bottom: 1.25rem;
+@media (min-width: 600px) {
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    header .logo {
+        margin-bottom: 0;
+    }
 }
 
-form label {
-    display: block;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    color: var(--dark-color);
-}
-
-form input[type="text"],
-form input[type="email"],
-form input[type="tel"],
-form select,
-form textarea {
-    width: 100%;
-    padding: 0.75rem;
-    border: 1px solid var(--border-color);
-    border-radius: 6px;
-    font-size: 1rem;
-    font-family: inherit;
-    transition: var(--transition);
-}
-
-form input:focus,
-form select:focus,
-form textarea:focus {
-    outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
-}
-
-/* Alignement checkbox légal */
-form .checkbox-container {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.5rem;
-}
-
-form .checkbox-container input[type="checkbox"] {
-    margin-top: 0.25rem;
-}
-
-form button[type="submit"] {
-    background-color: var(--primary-color);
-    color: var(--white);
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: 6px;
-    font-weight: 600;
-    font-size: 1rem;
-    cursor: pointer;
-    width: 100%;
-    transition: var(--transition);
-}
-
-form button[type="submit"]:hover {
-    background-color: var(--primary-hover);
-}
-
-/* ==========================================================================
-   7. FOOTER
-   ========================================================================== */
-footer {
-    background-color: var(--dark-color);
-    color: var(--white);
-    text-align: center;
-    padding: 1.5rem;
-    font-size: 0.9rem;
-    margin-top: auto;
+@media (max-width: 600px) {
+    main {
+        margin: 20px auto;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .contact-section {
+        padding: 20px;
+    }
 }

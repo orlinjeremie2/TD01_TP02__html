@@ -4,31 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services - TechInnov Gabon</title>
-    <style>
-        /* Grille CSS sémantique pour l'affichage des cartes de services */
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-        .card {
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
-        <div>TechInnov</div>
+        <div class="logo">TechInnov</div>
         <nav aria-label="Menu principal">
             <ul>
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="about.html">À propos</a></li>
-                <li><a href="services.html" aria-current="page">Nos services</a></li>
+                <li><a href="services.html" class="active" aria-current="page">Nos services</a></li>
+                <li><a href="actualite.html">Actualités</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
